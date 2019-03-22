@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>ApiSystemAnalyser-Console</AssemblyName>
     <StartupObject>Apteco.ApiSystemAnalyser.Console.Program</StartupObject>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
