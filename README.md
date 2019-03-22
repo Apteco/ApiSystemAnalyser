@@ -34,8 +34,37 @@ The ApiSystemAnalyser goes through the following steps:
 4. Output the results to the console.
 
 ### Implementation
-To see how the ApiClient code was generated from the API's Swagger specification, look at the [Readme](Apteco.ApiSystemAnalyser.ApiClient/Readme.md) in the Apteco.ApiSystemAnalyser.ApiClient project.
+To see how the ApiClient code was generated from the API's Swagger specification, look at the
+[Readme](Apteco.ApiSystemAnalyser.ApiClient/Readme.md) in the Apteco.ApiSystemAnalyser.ApiClient project.
 
 The Apteco.ApiSystemAnalyser.Core project contains the business logic for the application (as described above).
 
-The Apteco.ApiSystemAnalyser.Console project contains a console application entry point that simply gathers the command line parameters and starts the processing.
+The Apteco.ApiSystemAnalyser.Console project contains a console application entry point that simply gathers the
+command line parameters and starts the processing.
+
+### Build
+To build the project, either do so via Visual Studio (2017 or later) or using the dotnet CLI tool.
+
+##### Visual Studio
+Open the ApSystemAnalyser.sln file in Visual Studio and build the project.
+
+To generate the standalone executable, right-click on the Apteco.ApiSystemAnalyser.Console project and choose "Publish...".
+Then choose the "Folder Profile" and publish that.  The binaries will be compiled into
+`Apteco.ApiSystemAnalyser.Console\bin\Release\netcoreapp2.1\win-x64`
+
+##### dotnet CLI
+To build the project so that it will run under any archirecture that .Net Core supports (Windows, Mac OSX, Linux), go to the
+root directory and run `dotnet build`.  This will compile the code so that it can be run using the commands:
+
+```
+cd Apteco.ApiSystemAnalyser.Console\bin\Debug\netcoreapp2.1
+dotnet ApiSystemAnalyser-Console.dll
+```
+
+To build a .exe file that will run on the Windows 64 bit platform, go to the root directory and run 
+```
+dotnet publish -c Release -r win-x64
+```
+
+The binaries will be compiled into
+`Apteco.ApiSystemAnalyser.Console\bin\Release\netcoreapp2.1\win-x64`
