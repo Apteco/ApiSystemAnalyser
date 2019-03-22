@@ -29,7 +29,7 @@ the application with just the base URL of the API specified:
 To get the results for a given DataView, enter the base URL of the API, the name of the DataView you want to connect
 to and a valid username and password:
 
-![Get Results](Apteco.ApiSystemAnalyser.Resources/Images/Readme/ApiSystemAnalyser-Results.jpg)
+![Get Stats](Apteco.ApiSystemAnalyser.Resources/Images/Readme/ApiSystemAnalyser-Stats.jpg)
 
 To return these statistics, the ApiSystemAnalyser goes through the following steps:
 
