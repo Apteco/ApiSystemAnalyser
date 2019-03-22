@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Apteco.ApiSystemAnalyser.ApiClient.Api;
 using Apteco.ApiSystemAnalyser.ApiClient.Model;
 
-namespace Apteco.ApiSystemAnalyser.Core
+namespace Apteco.ApiSystemAnalyser.Core.Services
 {
   public class LoginService
   {

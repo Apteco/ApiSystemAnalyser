@@ -6,7 +6,7 @@ using Apteco.ApiSystemAnalyser.ApiClient.Api;
 using Apteco.ApiSystemAnalyser.ApiClient.Model;
 using Apteco.ApiSystemAnalyser.Core.Utilities;
 
-namespace Apteco.ApiSystemAnalyser.Core
+namespace Apteco.ApiSystemAnalyser.Core.Services
 {
   public class FastStatsSystemService
   {

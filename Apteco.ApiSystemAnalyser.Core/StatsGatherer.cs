@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using Apteco.ApiSystemAnalyser.ApiClient.Model;
+using Apteco.ApiSystemAnalyser.Core.Services;
 using Microsoft.Extensions.Logging;
 
 namespace Apteco.ApiSystemAnalyser.Core

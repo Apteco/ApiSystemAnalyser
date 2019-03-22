@@ -4,7 +4,7 @@ using Apteco.ApiSystemAnalyser.ApiClient.Api;
 using Apteco.ApiSystemAnalyser.ApiClient.Client;
 using Apteco.ApiSystemAnalyser.ApiClient.Model;
 
-namespace Apteco.ApiSystemAnalyser.Core
+namespace Apteco.ApiSystemAnalyser.Core.Services
 {
   public class ApiConnectorFactory : IApiConnectorFactory
   {
@@ -20,6 +20,11 @@ namespace Apteco.ApiSystemAnalyser.Core
     #endregion
 
     #region public methods
+    public IAboutApi CreateAboutApi(SessionDetails sessionDetails)
+    {
+      return new AboutApi(CreateConfiguration(sessionDetails));
+    }
+
     public ISessionsApi CreateSessionsApi(SessionDetails sessionDetails)
     {
       return new SessionsApi(CreateConfiguration(sessionDetails));
