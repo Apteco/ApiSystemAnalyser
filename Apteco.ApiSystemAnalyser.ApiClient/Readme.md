@@ -7,7 +7,7 @@ Swagger/OpenApi specification using [swagger-codegen](https://github.com/swagger
 2. Download the latest stable release of the swagger-codegen (see 
 [the prerequisites on the swagger-codegen readme](https://github.com/swagger-api/swagger-codegen#prerequisites)
 for a link to get the jar file from).
-3. There is a [json options file](Apteco.ApiSystemAnalyser.Resources/apteco-api-codegen-options.json)
+3. There is a [json options file](../Apteco.ApiSystemAnalyser.Resources/apteco-api-codegen-options.json)
 in the Apteco.ApiSystemAnalyser.Resources project that contains some settings to use when generating the
 API client code.
 4. Run the following command to generate the client libraries from the API hosted at the given URL:
