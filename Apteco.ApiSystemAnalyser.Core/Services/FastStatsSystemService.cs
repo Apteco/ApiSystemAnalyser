@@ -24,16 +24,16 @@ namespace Apteco.ApiSystemAnalyser.Core.Services
     #endregion
 
     #region public methods
-    public async Task<List<string>> GetSystemNames(SessionDetails sessionDetails)
+    public async Task<List<string>> GetSystemNames(string accessToken)
     {
-      IFastStatsSystemsApi systemApi = connectorFactory.CreateFastStatsSystemsApi(sessionDetails);
+      IFastStatsSystemsApi systemApi = connectorFactory.CreateFastStatsSystemsApi(accessToken);
       PagedResultsFastStatsSystemSummary systems = await systemApi.FastStatsSystemsGetFastStatsSystemsAsync(dataViewName, null, null, null, 1000);
       return systems?.List?.Select(s => s.Name).ToList() ?? new List<string>();
     }
 
-    public async Task<VariableStatistics> GetVariableStatistics(string systemName, SessionDetails sessionDetails)
+    public async Task<VariableStatistics> GetVariableStatistics(string systemName, string accessToken)
     {
-      IFastStatsSystemsApi systemApi = connectorFactory.CreateFastStatsSystemsApi(sessionDetails);
+      IFastStatsSystemsApi systemApi = connectorFactory.CreateFastStatsSystemsApi(accessToken);
       PagedResultsVariable variables = await systemApi.FastStatsSystemsGetFastStatsVariablesAsync(dataViewName, systemName, null, null, null, 1000000);
 
       VariableStatistics variableStatistics = new VariableStatistics();

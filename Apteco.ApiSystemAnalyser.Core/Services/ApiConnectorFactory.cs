@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Apteco.ApiSystemAnalyser.ApiClient.Api;
 using Apteco.ApiSystemAnalyser.ApiClient.Client;
-using Apteco.ApiSystemAnalyser.ApiClient.Model;
 
 namespace Apteco.ApiSystemAnalyser.Core.Services
 {
@@ -20,29 +18,29 @@ namespace Apteco.ApiSystemAnalyser.Core.Services
     #endregion
 
     #region public methods
-    public IAboutApi CreateAboutApi(SessionDetails sessionDetails)
+    public IAboutApi CreateAboutApi(string accessToken)
     {
-      return new AboutApi(CreateConfiguration(sessionDetails));
+      return new AboutApi(CreateConfiguration(accessToken));
     }
 
-    public ISessionsApi CreateSessionsApi(SessionDetails sessionDetails)
+    public ISessionsApi CreateSessionsApi(string accessToken)
     {
-      return new SessionsApi(CreateConfiguration(sessionDetails));
+      return new SessionsApi(CreateConfiguration(accessToken));
     }
 
-    public IFastStatsSystemsApi CreateFastStatsSystemsApi(SessionDetails sessionDetails)
+    public IFastStatsSystemsApi CreateFastStatsSystemsApi(string accessToken)
     {
-      return new FastStatsSystemsApi(CreateConfiguration(sessionDetails));
+      return new FastStatsSystemsApi(CreateConfiguration(accessToken));
     }
     #endregion
 
     #region private methods
-    private Configuration CreateConfiguration(SessionDetails sessionDetails)
+    private Configuration CreateConfiguration(string accessToken)
     {
       Dictionary<string, string> defaultHeaders = new Dictionary<string, string>();
-      if (sessionDetails != null)
+      if (accessToken != null)
       {
-        defaultHeaders.Add("Authorization", "Bearer " + sessionDetails.AccessToken);
+        defaultHeaders.Add("Authorization", "Bearer " + accessToken);
       }
 
       return new Configuration()

@@ -25,10 +25,10 @@ namespace Apteco.ApiSystemAnalyser.Core
     #endregion
 
     #region public methods
-    public async Task<bool> OutputStats(SessionDetails sessionDetails, TextWriter outputWriter)
+    public async Task<bool> OutputStats(string accessToken, TextWriter outputWriter)
     {
       FastStatsSystemService fastStatsSystemService = new FastStatsSystemService(connectorFactory, dataViewName);
-      List<string> systemNames = await fastStatsSystemService.GetSystemNames(sessionDetails);
+      List<string> systemNames = await fastStatsSystemService.GetSystemNames(accessToken);
 
       if (systemNames == null || systemNames.Count == 0)
       {
@@ -38,7 +38,7 @@ namespace Apteco.ApiSystemAnalyser.Core
 
       foreach (string systemName in systemNames)
       {
-        VariableStatistics stats = await fastStatsSystemService.GetVariableStatistics(systemName, sessionDetails);
+        VariableStatistics stats = await fastStatsSystemService.GetVariableStatistics(systemName, accessToken);
         outputWriter.WriteLine(stats);
         outputWriter.WriteLine();
         outputWriter.WriteLine();

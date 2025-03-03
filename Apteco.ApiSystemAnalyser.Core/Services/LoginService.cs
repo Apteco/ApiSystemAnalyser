@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Apteco.ApiSystemAnalyser.ApiClient.Api;
 using Apteco.ApiSystemAnalyser.ApiClient.Model;
@@ -38,7 +36,7 @@ namespace Apteco.ApiSystemAnalyser.Core.Services
       if (sessionDetails == null)
         throw new Exception("No session has been created - please log in");
 
-      ISessionsApi sessionsApi = connectorFactory.CreateSessionsApi(sessionDetails);
+      ISessionsApi sessionsApi = connectorFactory.CreateSessionsApi(sessionDetails.AccessToken);
       await sessionsApi.SessionsLogoutSessionAsync(dataViewName, sessionDetails.SessionId);
     }
     #endregion
